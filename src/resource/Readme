@@ -1,12 +1,12 @@
 Overview of the solution:
 ----------------------------
-1. Reading the sentences from the input file, building the map of sentences (timeStamp -> Sentence)
-and finding the length of the longest sentence in the input file.
-2. Algorithm looks for group sentences that differ one from each other by last word,
+1. Read the sentences from the input file, build the map of sentences (timeStamp -> Sentence)
+and find the length of the longest sentence in the input file.
+2. Look for the group of sentences that differ one from each other by last word,
 then the sentences that differ one from each other by (last-1) word, then (last-2) word and so on.
-At each iteration we find out the group of similar instances with (last-i) word as changing word,
+At each iteration we find out the group of similar sentences with (last-i) word as changing word and
 putting them into the map of groups.
-3. Writing the groups (at least of size 2) of similar sentences, found at each iteration into the output file.
+3. Write the groups (of size 2 or more) found at each iteration into the output file.
 
 How to run?
 -------------
