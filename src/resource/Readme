@@ -1,0 +1,35 @@
+Overview of the solution:
+----------------------------
+1. Reading the sentences from the input file, building the map of sentences (timeStamp -> Sentence)
+and finding the length of the longest sentence in the input file.
+2. Algorithm looks for group sentences that differ one from each other by last word,
+then the sentences that differ one from each other by (last-1) word, then (last-2) word and so on.
+At each iteration we find out the group of similar instances with (last-i) word as changing word,
+putting them into the map of groups.
+3. Writing the groups (at least of size 2) of similar sentences, found at each iteration into the output file.
+
+How to run?
+-------------
+You have /src/test/TestInvestigator.java test file to validate the results.
+There is /src/resource/investigatorInput.txt input file.
+
+What can you say about the complexity of your code?
+---------------------------------------------------
+time complexity = O(n*k), n is the number of the sentences, k is the length of the longest sentence.
+memory complexity = O(file size), n is the number of the sentences, l is the average sentence's length.
+
+If you had two weeks to do this task, what would you have done differently? What would be better?
+-------------------------------------------------------------------------------------------------
+If you have memory constraints and you need process large files this algorithm may be expensive.
+So it can be improved by encoding the words of the sentences by int numbers.
+Instead of strings we will keep and operate by int numbers what is much cheaper.
+
+How will your algorithm scale?
+-------------------------------
+The biggest problem of the proposed solution in terms of scalability is the hash map.
+In order to solve the limitation of single host memory while still staying on a single machine
+we can use a library / service that stores data externally on disk rather than in memory.
+If data can not be fitted on a single host we can use distributed hash table.
+
+
+
